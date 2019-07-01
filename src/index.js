@@ -73,8 +73,13 @@ const findOpenRestaurants = (csvFilename, searchDatetime) => {
                 end += ":00";
               }
             }
+
             if (days.includes(day) || days.includes(subDay)) {
-              if (time) output.push(restaurant);
+              start = timeConvertor(start + startUnit);
+              end = timeConvertor(end + endUnit);
+              if (time[0] >= start && time[0] <= end) {
+                output.push(restaurant);
+              }
             }
           });
         });
@@ -107,23 +112,33 @@ const covertDateToTime = date => {
   let hours = d.getHours();
   let minutes = d.getMinutes();
   let seconds = d.getSeconds();
-  let dd = "AM";
-  let h = hours;
-  if (h >= 12) {
-    h = hours - 12;
-    dd = "PM";
-  }
+
   if (hours == 0) {
-    h = 12;
+    hours = 12;
   }
   minutes = minutes < 10 ? "0" + minutes : minutes;
   seconds = seconds < 10 ? "0" + seconds : seconds;
 
-  let time = h + ":" + minutes;
-  time += " " + dd;
+  let time = hours + ":" + minutes;
 
   return time;
 };
+
+function timeConvertor(time) {
+  var PM = time.match("PM") ? true : false;
+
+  time = time.split(":");
+
+  var min = time[1].substring(0, 2);
+
+  if (PM) {
+    var hour = 12 + parseInt(time[0], 10);
+  } else {
+    var hour = time[0];
+  }
+
+  return hour + ":" + min;
+}
 
 const convertDateToDay = date => {
   let j = new Array(

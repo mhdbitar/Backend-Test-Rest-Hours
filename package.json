@@ -4,7 +4,7 @@
   "description": "Backend Test for reading files and pase the file",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [
     "Nodejs"

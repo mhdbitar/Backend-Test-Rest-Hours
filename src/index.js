@@ -23,7 +23,6 @@ app.get('/restaurants', async (req, res) => {
       }
     });
   } catch (error) {
-    console.log(error)
     res.status(400).send({ success: false, data: null, error });
   }
 })

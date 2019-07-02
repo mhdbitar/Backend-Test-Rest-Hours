@@ -4,9 +4,14 @@ This is a demo for backend interview
 
 ## Running the project
 
-First run: npm install
+Run the following commands in your terminal:
 
-Second run: npm run start
+```bash
+npm install
+
+npm run dev
+
+```
 
 ### Work with API
 

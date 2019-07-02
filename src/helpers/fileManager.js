@@ -2,7 +2,7 @@ const fs = require("fs");
 const csv = require("fast-csv");
 
 // Read CSV file and return an array
-module.exports.readCSVFile = filePath => {
+module.exports.readCSVFile = (filePath) => {
     return new Promise((resolve, reject) => {
         let output = [];
         var fh = fs.createReadStream(filePath);

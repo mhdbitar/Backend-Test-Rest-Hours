@@ -43,15 +43,15 @@ module.exports.timeConvertor = (time) => {
  * Convert number day to string
  * @params Date
  */
-module.exports.convertDateToDay = (date) => {
+module.exports.convertDateToDay = (day) => {
     let j = new Array(
+      "Sunday",
       "Monday",
       "Tuesday",
       "Wednesday",
       "Thursday",
       "Friday",
-      "Saturday",
-      "Sunday"
+      "Saturday"
     );
-    return j[date.getDay() - 1];
+    return j[day];
 };

@@ -4,7 +4,7 @@
   "description": "Backend Test for reading files and pase the file",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [
     "Nodejs"
@@ -12,6 +12,7 @@
   "author": "Mohamad Bitar",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "csv-parse": "^4.4.3",
     "csv-parser": "^2.3.0",
     "express": "^4.17.1",

@@ -16,7 +16,7 @@
     "csv-parse": "^4.4.3",
     "csv-parser": "^2.3.0",
     "express": "^4.17.1",
-    "fast-csv": "^3.0.1"
+    "fast-csv": "^4.3.6"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
